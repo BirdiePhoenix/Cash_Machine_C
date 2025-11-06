@@ -16,5 +16,13 @@ typedef struct {
     size_t capacity; // allocated capacity
 } AccountList;
 
+void initAccountList(AccountList *list);
+void freeAccountList(AccountList *list);
+int addAccount(AccountList *list, int number, const char *owner, 
+                const char *pin, double initial_balance);
+Account* findByNumber(AccountList *list, int number);
+int deposit(Account *acc, double amount);
+int withdraw(Account * acc, double amount);
+int transfer(Account *from, Account *to, double amount);
 
 #endif
